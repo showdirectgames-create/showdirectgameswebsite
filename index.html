@@ -5,62 +5,209 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>쇼다이렉트 | 장사냥 프로젝트</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap');
+    :root {
+      --bg: #0b0f16;
+      --surface: rgba(20, 26, 38, 0.72);
+      --surface-border: rgba(255, 255, 255, 0.08);
+      --text: #e9edf3;
+      --muted: #aab3c2;
+      --accent: #36f6d5;
+      --accent-2: #5b82ff;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
       margin: 0; padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      background: radial-gradient(1200px 800px at 15% 10%, rgba(91, 130, 255, 0.25) 0%, transparent 60%),
+                  radial-gradient(900px 700px at 80% 5%, rgba(54, 246, 213, 0.18) 0%, transparent 55%),
+                  #0b0f16;
+      color: var(--text);
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(transparent 23px, rgba(255, 255, 255, 0.04) 24px),
+        linear-gradient(90deg, transparent 23px, rgba(255, 255, 255, 0.04) 24px),
+        linear-gradient(transparent 79px, rgba(91, 130, 255, 0.1) 80px),
+        linear-gradient(90deg, transparent 79px, rgba(91, 130, 255, 0.1) 80px);
+      background-size: 24px 24px, 24px 24px, 80px 80px, 80px 80px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+    header, section, footer {
+      position: relative;
+      z-index: 1;
     }
     header {
-      background: #002d72;
-      color: white;
-      padding: 20px;
+      background: linear-gradient(120deg, rgba(11, 15, 22, 0.9) 0%, rgba(20, 32, 56, 0.9) 60%, rgba(11, 15, 22, 0.9) 100%);
+      color: var(--text);
+      padding: 32px 20px 28px;
       text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     section {
-      padding: 40px 20px;
-      max-width: 960px;
-      margin: auto;
+      padding: 40px 24px;
+      max-width: 980px;
+      margin: 28px auto;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
     }
     h1, h2 {
       margin-bottom: 10px;
+      font-family: 'Rajdhani', 'Noto Sans KR', sans-serif;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: 2.6rem;
+      margin-top: 10px;
+    }
+    h2 {
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+    p, li {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
     }
     .logo {
       max-width: 200px;
       margin-bottom: 20px;
+      border: 2px solid rgba(54, 246, 213, 0.7);
+      border-radius: 14px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+    }
+    .project-image {
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      border-radius: 12px;
+      margin: 16px 0 24px;
+      display: block;
+    }
+    .project-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+    }
+    .project-table th {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 0 12px 10px 0;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .project-table td {
+      vertical-align: top;
+      padding: 0 12px 0 0;
+    }
+    .project-table td:last-child {
+      padding-right: 0;
+    }
+    .project-table th:last-child {
+      padding-right: 0;
+    }
+    .project-table img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+      display: block;
+    }
+    .project-table .project-image-single {
+      height: 420px;
+      object-fit: cover;
+    }
+    .project-table .project-image-stack {
+      height: 204px;
+      object-fit: cover;
+    }
+    .project-table .project-image-stack + .project-image-stack {
+      margin-top: 12px;
     }
     footer {
-      background: #eee;
+      background: rgba(12, 16, 24, 0.9);
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      color: #666;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="LOGO.png" alt="쇼다이렉트 로고" class="logo" />
+    <img src="LOGO-showdirect-200K.png" alt="쇼다이렉트 로고" class="logo" />
     <h1>쇼다이렉트</h1>
     <p>게임으로 세상을 이롭게</p>
   </header>
 
   <section>
     <h2>회사 소개</h2>
-     <p>
-      ㈜쇼다이렉트는 현실 비즈니스를 게임화(Gameification)하는 기술 중심 콘텐츠 기업입니다. <br />
-      AI, 게임 서버, 데이터 분석 기술을 기반으로 소상공인·지역상권·현실 경제 구조를 게임 콘텐츠로 재해석하는 차세대 인터랙티브 플랫폼을 개발하고 있습니다.
-      주요 프로젝트인 <strong>‘장사냥’</strong>은 게임을 통해 자영업자의 현실을 직관적으로 체험하고, 게임 통해 간접 홍보할 수 있는 새로운 플랫폼 게임입니다.
+    <p>
+      ㈜쇼다이렉트는 현실 비즈니스를 넘어 역사, 교육 등 광범위한 현실의 문제를 게임으로 풀어내는 기술 중심 콘텐츠 기업입니다. <br />
+      AI, 게임 서버, 데이터 분석 기술을 기반으로 현실의 구조와 경험을 게임 콘텐츠로 재해석하여 재미와 감동을 전하는 인터랙티브 플랫폼을 개발하고 있습니다.
+      주요 프로젝트인 <strong>‘장사냥’</strong>은 게임을 통해 자영업자의 현실을 직관적으로 체험하고, 게임을 통해 간접 홍보할 수 있는 새로운 플랫폼 게임입니다.
     </p>
   </section>
 
   <section>
     <h2>주요 프로젝트</h2>
-    <ul>
-      <li><strong>장사냥 (Jangsa Nyang)</strong> – 현실 기반 가게 운영 + 고양이 캐릭터 시뮬레이션</li>
-      <li><strong>Apple Store(IOS)</strong> – <a href="https://apps.apple.com/us/app/장사냥/id6759076588" target="_blank">다운로드</a></li>
-      <li><strong>Google Play Store(AOS)</strong> – <a href="https://play.google.com/store/apps/details?id=kr.showdirect.cattycoon&pcampaignid=web_share" target="_blank">다운로드</a></li>
-    </ul>
+    <table class="project-table">
+      <tr>
+        <th>장사냥</th>
+        <th>CatShooter</th>
+        <th>프로젝트 한글</th>
+      </tr>
+      <tr>
+        <td>
+          <img src="CatTycoon/A_full-body_shot_202604221033.jpeg" alt="장사냥 고양이 캐릭터 이미지" class="project-image-single" />
+          <ul>
+            <li><strong>장사냥 (Jangsa Nyang)</strong> – 현실 기반 가게 운영 + 고양이 캐릭터 시뮬레이션</li>
+            <li><strong>Apple Store(IOS)</strong> – <a href="https://apps.apple.com/us/app/장사냥/id6759076588" target="_blank">다운로드</a></li>
+            <li><strong>Google Play Store(AOS)</strong> – <a href="https://play.google.com/store/apps/details?id=kr.showdirect.cattycoon&pcampaignid=web_share" target="_blank">다운로드</a></li>
+          </ul>
+        </td>
+        <td>
+          <img src="CatShooter/Players.png" alt="CatShooter 플레이어 이미지" class="project-image-stack" />
+          <img src="CatShooter/Enermy.png" alt="CatShooter 적 이미지" class="project-image-stack" />
+          <ul>
+            <li><strong>CatShooter</strong> – 캐주얼 슈팅 게임 + 고양이 캐릭터 </li>
+            <li><strong>개발 진행 중</strong>
+          </ul>
+        </td>
+        <td>
+          <img src="Hangul/Hangul.png" alt="프로젝트 한글 이미지" class="project-image-single" />
+          <ul>
+            <li><strong>프로젝트 한글</strong> – 한글 관련 프로젝트 </li>
+            <li><strong>개발 진행 중</strong></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    
   </section>
 
   <section>
