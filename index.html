@@ -105,9 +105,29 @@
       display: block;
     }
     .project-table {
-      width: 100%;
+      width: 1920px;
       border-collapse: collapse;
       margin: 16px 0 24px;
+    }
+    .project-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+      scrollbar-width: thin;
+    }
+    .project-table-wrap::-webkit-scrollbar {
+      height: 8px;
+    }
+    .project-table-wrap::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .project-table-wrap::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+    }
+    .project-table-wrap::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
     .project-table th {
       text-align: center;
@@ -175,38 +195,40 @@
 
   <section>
     <h2>주요 프로젝트</h2>
-    <table class="project-table">
-      <tr>
-        <th>장사냥</th>
-        <th>CatShooter</th>
-        <th>프로젝트 한글</th>
-      </tr>
-      <tr>
-        <td>
-          <img src="CatTycoon/A_full-body_shot_202604221033.jpeg" alt="장사냥 고양이 캐릭터 이미지" class="project-image-single" />
-          <ul>
-            <li><strong>장사냥 (Jangsa Nyang)</strong> – 현실 기반 가게 운영 + 고양이 캐릭터 시뮬레이션</li>
-            <li><strong>Apple Store(IOS)</strong> – <a href="https://apps.apple.com/us/app/장사냥/id6759076588" target="_blank">다운로드</a></li>
-            <li><strong>Google Play Store(AOS)</strong> – <a href="https://play.google.com/store/apps/details?id=kr.showdirect.cattycoon&pcampaignid=web_share" target="_blank">다운로드</a></li>
-          </ul>
-        </td>
-        <td>
-          <img src="CatShooter/Players.png" alt="CatShooter 플레이어 이미지" class="project-image-stack" />
-          <img src="CatShooter/Enermy.png" alt="CatShooter 적 이미지" class="project-image-stack" />
-          <ul>
-            <li><strong>CatShooter</strong> – 캐주얼 슈팅 게임 + 고양이 캐릭터 </li>
-            <li><strong>개발 진행 중</strong>
-          </ul>
-        </td>
-        <td>
-          <img src="Hangul/Hangul.png" alt="프로젝트 한글 이미지" class="project-image-single" />
-          <ul>
-            <li><strong>프로젝트 한글</strong> – 한글 관련 프로젝트 </li>
-            <li><strong>개발 진행 중</strong></li>
-          </ul>
-        </td>
-      </tr>
-    </table>
+    <div class="project-table-wrap">
+      <table class="project-table">
+        <tr>
+          <th>장사냥</th>
+          <th>CatShooter</th>
+          <th>프로젝트 한글</th>
+        </tr>
+        <tr>
+          <td>
+            <img src="CatTycoon/A_full-body_shot_202604221033.jpeg" alt="장사냥 고양이 캐릭터 이미지" class="project-image-single" />
+            <ul>
+              <li><strong>장사냥 (Jangsa Nyang)</strong> – 현실 기반 가게 운영 + 고양이 캐릭터 시뮬레이션</li>
+              <li><strong>Apple Store(IOS)</strong> – <a href="https://apps.apple.com/us/app/장사냥/id6759076588" target="_blank">다운로드</a></li>
+              <li><strong>Google Play Store(AOS)</strong> – <a href="https://play.google.com/store/apps/details?id=kr.showdirect.cattycoon&pcampaignid=web_share" target="_blank">다운로드</a></li>
+            </ul>
+          </td>
+          <td>
+            <img src="CatShooter/Players.png" alt="CatShooter 플레이어 이미지" class="project-image-stack" />
+            <img src="CatShooter/Enermy.png" alt="CatShooter 적 이미지" class="project-image-stack" />
+            <ul>
+              <li><strong>CatShooter</strong> – 캐주얼 슈팅 게임 + 고양이 캐릭터 </li>
+              <li><strong>개발 진행 중</strong>
+            </ul>
+          </td>
+          <td>
+            <img src="Hangul/Hangul.png" alt="프로젝트 한글 이미지" class="project-image-single" />
+            <ul>
+              <li><strong>프로젝트 한글</strong> – 한글 관련 프로젝트 </li>
+              <li><strong>개발 진행 중</strong></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
     
   </section>
 
