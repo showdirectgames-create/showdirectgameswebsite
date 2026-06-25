@@ -105,7 +105,8 @@
       display: block;
     }
     .project-table {
-      width: 720px;
+      width: 100%;
+      table-layout: fixed;
       border-collapse: collapse;
       margin: 16px 0 24px;
     }
@@ -130,6 +131,7 @@
       background: rgba(255, 255, 255, 0.2);
     }
     .project-table th {
+      width: 50%;
       text-align: center;
       font-size: 1.5rem;
       padding: 0 12px 10px 0;
@@ -138,6 +140,7 @@
       letter-spacing: 0.08em;
     }
     .project-table td {
+      width: 50%;
       vertical-align: top;
       padding: 0 12px 0 0;
     }
@@ -149,7 +152,7 @@
     }
     .project-table img {
       width: 100%;
-      max-width: 420px;
+      max-width: 100%;
       height: auto;
       border-radius: 16px;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -157,6 +160,8 @@
       display: block;
     }
     .project-table .project-image-single {
+      width: 100%;
+      max-width: 100%;
       height: 420px;
       object-fit: cover;
     }
@@ -194,7 +199,7 @@
         padding: 6px;
       }
       .project-table {
-        width: 720px;
+        width: 100%;
       }
       .project-table th {
         font-size: 1.2rem;
@@ -229,13 +234,8 @@
     <div class="project-table-wrap">
       <table class="project-table">
         <tr>
-          <th>장사냥</th>
-          <th>CatShooter</th>
-          <th>프로젝트 한글</th>
-        </tr>
-        <tr>
           <td>
-            <img src="CatTycoon/A_full-body_shot_202604221033.jpeg" alt="장사냥 고양이 캐릭터 이미지" class="project-image-single" />
+            <img src="CatTycoon/A_full-body_shot_202604221033.jpeg" alt="장사냥 고양이 캐릭터 이미지" class="project-image-single project-image-jangsa" />
             <ul>
               <li><strong>장사냥 (Jangsa Nyang)</strong> – 현실 기반 가게 운영 + 고양이 캐릭터 시뮬레이션</li>
               <li><strong>Apple Store(IOS)</strong> – <a href="https://apps.apple.com/us/app/장사냥/id6759076588" target="_blank">다운로드</a></li>
@@ -247,13 +247,22 @@
             <img src="CatShooter/Enermy.png" alt="CatShooter 적 이미지" class="project-image-stack" />
             <ul>
               <li><strong>CatShooter</strong> – 캐주얼 슈팅 게임 + 고양이 캐릭터 </li>
-              <li><strong>개발 진행 중</strong>
+              <li><strong>개발 진행 중</strong></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="Hangul/Hangul.png" alt="프로젝트 한글 이미지" class="project-image-single project-image-hangul" />
+            <ul>
+              <li><strong>프로젝트 한글</strong> – 한글 관련 프로젝트 </li>
+              <li><strong>개발 진행 중</strong></li>
             </ul>
           </td>
           <td>
-            <img src="Hangul/Hangul.png" alt="프로젝트 한글 이미지" class="project-image-single" />
+            <img src="Golf/GolfBestOfBestShot.png" alt="프로젝트 골프 이미지" class="project-image-single project-image-golf" />
             <ul>
-              <li><strong>프로젝트 한글</strong> – 한글 관련 프로젝트 </li>
+              <li><strong>프로젝트 골프</strong> – 골프 관련 프로젝트 </li>
               <li><strong>개발 진행 중</strong></li>
             </ul>
           </td>
